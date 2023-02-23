@@ -44,13 +44,6 @@ jobs:
               docker-compose -H ${{ secrets.HOST_SERVER }} pull
               docker-compose -H ${{ secrets.HOST_SERVER }} up -d
       -
-        name: Build and deploy
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          tags: ridertus/234-deploylab-frontend:latest
-      -
         name: Prepare docker-compose-prod run
         run: |
               mkdir 234-deploylab-frontend
